@@ -13,6 +13,9 @@ Prototype Java rewrite of the classic Dos Navigator text-mode file manager.
 mvn compile exec:java
 ```
 
+Run it from a real terminal with stdin/stdout attached to the console, for example Windows Terminal, PowerShell, or cmd.exe.
+IDE run consoles and redirected sessions cannot run the raw-mode TUI.
+
 Optional start directories:
 
 ```powershell
@@ -26,7 +29,9 @@ mvn compile exec:java -Dexec.args="C:\ C:\dev"
 - `PageUp` / `PageDown` scrolls by page
 - `Enter` opens selected directory
 - `Backspace` goes to parent directory
-- `F10`, `Esc`, or `Q` exits
+- `F10` opens/closes the menu bar
+- `Esc` closes the menu bar or exits when the menu is not open
+- `Q` exits
 
 The original Pascal sources are kept in `DosNavigator-master` as reference material.
 

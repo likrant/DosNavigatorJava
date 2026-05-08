@@ -2,10 +2,10 @@ package org.dosnavigator.panels;
 
 import org.dosnavigator.fs.FileSystemService;
 import org.dosnavigator.terminal.Color;
-import org.dosnavigator.terminal.ColorScheme;
 import org.dosnavigator.terminal.KeyStroke;
 import org.dosnavigator.terminal.TerminalDriver;
 import org.dosnavigator.ui.Box;
+import org.dosnavigator.ui.ColorPalette;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -31,12 +31,18 @@ public final class FilePanel {
         reload();
     }
 
-    public void render(TerminalDriver terminal, Box box, boolean active, ColorScheme colors) {
-        Color borderColor = active ? colors.activeBorder() : colors.inactiveBorder();
-        box.draw(terminal, borderColor, colors.panelBackground());
+    public void render(TerminalDriver terminal, Box box, boolean active, ColorPalette colors) {
+        Color borderColor = active ? colors.activeBorder().foreground() : colors.inactiveBorder().foreground();
+        box.draw(terminal, borderColor, colors.panel().background());
 
         String title = " " + directory + " ";
-        terminal.putString(box.x() + 2, box.y(), trim(title, box.width() - 4), active ? Color.YELLOW_BRIGHT : Color.WHITE, colors.panelBackground());
+        terminal.putString(
+                box.x() + 2,
+                box.y(),
+                trim(title, box.width() - 4),
+                active ? colors.panelTitle().foreground() : colors.inactiveBorder().foreground(),
+                colors.panel().background()
+        );
 
         int contentX = box.x() + 1;
         int contentY = box.y() + 1;
@@ -48,14 +54,14 @@ public final class FilePanel {
         for (int row = 0; row < contentHeight; row++) {
             int itemIndex = topIndex + row;
             if (itemIndex >= items.size()) {
-                writeLine(terminal, contentX, contentY + row, contentWidth, "", colors.panelBackground(), colors.normalText());
+                writeLine(terminal, contentX, contentY + row, contentWidth, "", colors.panel().background(), colors.panel().foreground());
                 continue;
             }
 
             FileItem item = items.get(itemIndex);
             boolean selected = active && itemIndex == selectedIndex;
-            Color background = selected ? colors.selectionBackground() : colors.panelBackground();
-            Color foreground = selected ? colors.selectionText() : item.directory() ? Color.YELLOW_BRIGHT : colors.normalText();
+            Color background = selected ? colors.selected().background() : colors.panel().background();
+            Color foreground = selected ? colors.selected().foreground() : item.directory() ? Color.YELLOW_BRIGHT : colors.panel().foreground();
             writeLine(terminal, contentX, contentY + row, contentWidth, formatItem(item, contentWidth), background, foreground);
         }
     }

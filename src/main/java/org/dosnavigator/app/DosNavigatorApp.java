@@ -1,112 +1,95 @@
 package org.dosnavigator.app;
 
+import org.dosnavigator.command.CommandId;
 import org.dosnavigator.fs.LocalFileSystemService;
 import org.dosnavigator.panels.FilePanel;
-import org.dosnavigator.terminal.Color;
-import org.dosnavigator.terminal.ColorScheme;
+import org.dosnavigator.panels.FilePanelWindow;
 import org.dosnavigator.terminal.KeyStroke;
 import org.dosnavigator.terminal.KeyType;
-import org.dosnavigator.terminal.TerminalDriver;
 import org.dosnavigator.terminal.TerminalSize;
+import org.dosnavigator.tui.Application;
+import org.dosnavigator.tui.Desktop;
+import org.dosnavigator.tui.Group;
 import org.dosnavigator.ui.Box;
-import org.dosnavigator.ui.StatusLine;
+import org.dosnavigator.ui.MenuBarView;
+import org.dosnavigator.ui.StatusLineView;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.nio.file.Path;
 
-public final class DosNavigatorApp implements Closeable {
-    private final TerminalDriver terminal;
-    private final ColorScheme colors = ColorScheme.dosNavigator();
-    private final StatusLine statusLine = new StatusLine();
-    private final FilePanel leftPanel;
-    private final FilePanel rightPanel;
-    private boolean leftActive = true;
-    private boolean running = true;
+public final class DosNavigatorApp extends Application {
+    private final MenuBarView menuBar;
+    private final Desktop desktop;
+    private final FilePanelWindow leftPanel;
+    private final FilePanelWindow rightPanel;
+    private final StatusLineView statusLine;
 
     public DosNavigatorApp(Path leftDirectory, Path rightDirectory) throws IOException {
-        terminal = new TerminalDriver("Dos Navigator Java");
+        super("Dos Navigator Java");
 
         LocalFileSystemService fileSystem = new LocalFileSystemService();
-        leftPanel = new FilePanel(fileSystem, leftDirectory);
-        rightPanel = new FilePanel(fileSystem, rightDirectory);
-    }
+        leftPanel = new FilePanelWindow(new Box(0, 1, 1, 1), new FilePanel(fileSystem, leftDirectory));
+        rightPanel = new FilePanelWindow(new Box(1, 1, 1, 1), new FilePanel(fileSystem, rightDirectory));
+        menuBar = new MenuBarView(new Box(0, 0, 1, 1));
+        desktop = new Desktop(new Box(0, 1, 1, 1));
+        statusLine = new StatusLineView(new Box(0, 2, 1, 1), this::activeStatusText);
 
-    public void run() throws IOException {
-        terminal.start();
+        desktop.add(leftPanel);
+        desktop.add(rightPanel);
+        desktop.setCurrent(leftPanel);
 
-        while (running) {
-            render();
-            handleKey(terminal.readKey());
-        }
-    }
+        Group root = new Group(new Box(0, 0, 1, 1));
+        root.add(desktop);
+        root.add(menuBar);
+        root.add(statusLine);
+        setRoot(root);
 
-    private void render() throws IOException {
-        TerminalSize size = terminal.size();
-
-        terminal.clear(colors.normalText(), colors.desktopBackground());
-
-        int width = size.columns();
-        int height = size.rows();
-        int statusHeight = 1;
-        int panelTop = 1;
-        int panelHeight = Math.max(3, height - panelTop - statusHeight);
-        int leftWidth = width / 2;
-        int rightWidth = width - leftWidth;
-
-        drawMenuBar(width);
-        leftPanel.render(terminal, new Box(0, panelTop, leftWidth, panelHeight), leftActive, colors);
-        rightPanel.render(terminal, new Box(leftWidth, panelTop, rightWidth, panelHeight), !leftActive, colors);
-        statusLine.render(terminal, height - 1, width, activePanel().statusText(), colors);
-
-        terminal.refresh();
-    }
-
-    private void drawMenuBar(int width) {
-        terminal.putString(0, 0, fit("  Left  File  Commands  Options  Right", width), Color.YELLOW_BRIGHT, colors.menuBackground());
-    }
-
-    private void handleKey(KeyStroke key) throws IOException {
-        if (key == null) {
-            return;
-        }
-
-        KeyType type = key.getKeyType();
-        if (type == KeyType.Escape || type == KeyType.F10) {
-            running = false;
-            return;
-        }
-        if (type == KeyType.Character && key.getCharacter() != null) {
-            char ch = Character.toLowerCase(key.getCharacter());
-            if (ch == 'q') {
-                running = false;
-                return;
-            }
-        }
-        if (type == KeyType.Tab) {
-            leftActive = !leftActive;
-            return;
-        }
-
-        activePanel().handleKey(key);
-    }
-
-    private FilePanel activePanel() {
-        return leftActive ? leftPanel : rightPanel;
-    }
-
-    private static String fit(String text, int width) {
-        if (width <= 0) {
-            return "";
-        }
-        if (text.length() >= width) {
-            return text.substring(0, width);
-        }
-        return text + " ".repeat(width - text.length());
+        commandBus().register(CommandId.NEXT, ignored -> desktop.selectNext(true));
+        commandBus().register(CommandId.PREVIOUS, ignored -> desktop.selectNext(false));
+        commandBus().register(CommandId.MENU, ignored -> {
+            menuBar.setActive(!menuBar.active());
+            commandBus().dispatch(menuBar.active() ? CommandId.MENU_ON : CommandId.MENU_OFF);
+            return true;
+        });
     }
 
     @Override
-    public void close() throws IOException {
-        terminal.close();
+    protected void onResize(TerminalSize size) {
+        AppLayout layout = AppLayout.calculate(size);
+        root().setBounds(layout.root());
+        menuBar.setBounds(layout.menuBar());
+        desktop.setBounds(layout.desktop());
+        leftPanel.setBounds(layout.leftPanel());
+        rightPanel.setBounds(layout.rightPanel());
+        statusLine.setBounds(layout.statusLine());
+    }
+
+    @Override
+    protected void handleKey(KeyStroke key) {
+        if (key.keyType() == KeyType.Tab && !menuBar.active()) {
+            commandBus().dispatch(CommandId.NEXT);
+            return;
+        }
+        super.handleKey(key);
+    }
+
+    @Override
+    protected void handleUnhandledKey(KeyStroke key) {
+        if (key.keyType() == KeyType.F10) {
+            commandBus().dispatch(CommandId.MENU);
+            return;
+        }
+        if (key.keyType() == KeyType.Escape && menuBar.active()) {
+            commandBus().dispatch(CommandId.MENU);
+            return;
+        }
+        super.handleUnhandledKey(key);
+    }
+
+    private String activeStatusText() {
+        if (desktop.current() == rightPanel) {
+            return rightPanel.statusText();
+        }
+        return leftPanel.statusText();
     }
 }

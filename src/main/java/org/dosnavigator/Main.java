@@ -22,7 +22,12 @@ public final class Main implements Callable<Integer> {
     private Path rightDirectory = Path.of(System.getProperty("user.home"));
 
     public static void main(String[] args) {
-        int exitCode = new CommandLine(new Main()).execute(args);
+        int exitCode = new CommandLine(new Main())
+                .setExecutionExceptionHandler((ex, commandLine, parseResult) -> {
+                    System.err.println(ex.getMessage());
+                    return commandLine.getCommandSpec().exitCodeOnExecutionException();
+                })
+                .execute(args);
         System.exit(exitCode);
     }
 

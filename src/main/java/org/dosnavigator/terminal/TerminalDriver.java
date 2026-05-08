@@ -3,8 +3,8 @@ package org.dosnavigator.terminal;
 import org.jline.terminal.Attributes;
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
+import org.jline.terminal.TerminalBuilder.SystemOutput;
 import org.jline.utils.InfoCmp.Capability;
-import org.jline.utils.NonBlockingReader;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -17,12 +17,25 @@ public final class TerminalDriver implements Closeable {
     private Attributes originalAttributes;
 
     public TerminalDriver(String name) throws IOException {
-        terminal = TerminalBuilder.builder()
-                .name(name)
-                .system(true)
-                .encoding(StandardCharsets.UTF_8)
-                .jna(true)
-                .build();
+        try {
+            terminal = TerminalBuilder.builder()
+                    .name(name)
+                    .system(true)
+                    .systemOutput(SystemOutput.ForcedSysOut)
+                    .provider("jna")
+                    .dumb(false)
+                    .encoding(StandardCharsets.UTF_8)
+                    .build();
+        } catch (IOException | IllegalStateException e) {
+            throw new IOException("""
+                    Unable to open an interactive terminal.
+                    Run this from Windows Terminal, PowerShell, or cmd.exe with stdin/stdout attached to the console.
+                    IDE run consoles and redirected Maven sessions usually cannot run the TUI.
+                    """, e);
+        }
+        if ("dumb".equalsIgnoreCase(terminal.getType())) {
+            throw new IOException("JLine created a dumb terminal; refusing to start the TUI without ANSI/raw-key support.");
+        }
         writer = terminal.writer();
     }
 
@@ -64,64 +77,7 @@ public final class TerminalDriver implements Closeable {
 
     public KeyStroke readKey() throws IOException {
         int ch = terminal.reader().read();
-        return decode(ch);
-    }
-
-    private KeyStroke decode(int ch) throws IOException {
-        return switch (ch) {
-            case 3, 27 -> decodeEscape();
-            case 9 -> KeyStroke.of(KeyType.Tab);
-            case 10, 13 -> KeyStroke.of(KeyType.Enter);
-            case 8, 127 -> KeyStroke.of(KeyType.Backspace);
-            default -> ch >= 32 ? KeyStroke.character((char) ch) : KeyStroke.of(KeyType.Unknown);
-        };
-    }
-
-    private KeyStroke decodeEscape() throws IOException {
-        NonBlockingReader reader = terminal.reader();
-        int first = reader.read(50);
-        if (first == NonBlockingReader.READ_EXPIRED || first < 0) {
-            return KeyStroke.of(KeyType.Escape);
-        }
-        if (first == '[') {
-            return decodeControlSequence(reader);
-        }
-        if (first == 'O') {
-            int second = reader.read(50);
-            return second == 'Y' ? KeyStroke.of(KeyType.F10) : KeyStroke.of(KeyType.Unknown);
-        }
-        return KeyStroke.of(KeyType.Escape);
-    }
-
-    private KeyStroke decodeControlSequence(NonBlockingReader reader) throws IOException {
-        int second = reader.read(50);
-        return switch (second) {
-            case 'A' -> KeyStroke.of(KeyType.ArrowUp);
-            case 'B' -> KeyStroke.of(KeyType.ArrowDown);
-            case 'F' -> KeyStroke.of(KeyType.End);
-            case 'H' -> KeyStroke.of(KeyType.Home);
-            case '1', '5', '6', '2' -> decodeTildeSequence(reader, second);
-            default -> KeyStroke.of(KeyType.Unknown);
-        };
-    }
-
-    private KeyStroke decodeTildeSequence(NonBlockingReader reader, int firstDigit) throws IOException {
-        StringBuilder value = new StringBuilder();
-        value.append((char) firstDigit);
-        int next;
-        while ((next = reader.read(50)) != NonBlockingReader.READ_EXPIRED && next >= 0) {
-            if (next == '~') {
-                break;
-            }
-            value.append((char) next);
-        }
-        return switch (value.toString()) {
-            case "1" -> KeyStroke.of(KeyType.Home);
-            case "5" -> KeyStroke.of(KeyType.PageUp);
-            case "6" -> KeyStroke.of(KeyType.PageDown);
-            case "21" -> KeyStroke.of(KeyType.F10);
-            default -> KeyStroke.of(KeyType.Unknown);
-        };
+        return TerminalKeyDecoder.decode(ch, terminal.reader()::read);
     }
 
     private void setColors(Color foreground, Color background) {
