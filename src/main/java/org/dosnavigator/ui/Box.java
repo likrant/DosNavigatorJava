@@ -4,12 +4,12 @@ import org.dosnavigator.terminal.Color;
 import org.dosnavigator.terminal.TerminalDriver;
 
 public record Box(int x, int y, int width, int height) {
-    private static final char TOP_LEFT = '\u250c';
-    private static final char TOP_RIGHT = '\u2510';
-    private static final char BOTTOM_LEFT = '\u2514';
-    private static final char BOTTOM_RIGHT = '\u2518';
-    private static final char HORIZONTAL = '\u2500';
-    private static final char VERTICAL = '\u2502';
+    private static final char TOP_LEFT = '\u2554';
+    private static final char TOP_RIGHT = '\u2557';
+    private static final char BOTTOM_LEFT = '\u255a';
+    private static final char BOTTOM_RIGHT = '\u255d';
+    private static final char HORIZONTAL = '\u2550';
+    private static final char VERTICAL = '\u2551';
 
     public void draw(TerminalDriver terminal, Color foreground, Color background) {
         if (width <= 1 || height <= 1) {
@@ -30,5 +30,9 @@ public record Box(int x, int y, int width, int height) {
             terminal.putChar(x, row, VERTICAL, foreground, background);
             terminal.putChar(x + width - 1, row, VERTICAL, foreground, background);
         }
+    }
+
+    public boolean contains(int column, int row) {
+        return column >= x && column < x + width && row >= y && row < y + height;
     }
 }

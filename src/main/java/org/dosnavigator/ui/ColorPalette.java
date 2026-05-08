@@ -19,18 +19,18 @@ public record ColorPalette(
 ) {
     public static ColorPalette dosNavigator() {
         return new ColorPalette(
-                new ColorPair(Color.WHITE_BRIGHT, Color.BLUE),
-                new ColorPair(Color.WHITE_BRIGHT, Color.BLUE),
-                new ColorPair(Color.YELLOW_BRIGHT, Color.BLUE),
+                new ColorPair(Color.WHITE_BRIGHT, Color.DARK_BLUE),
+                new ColorPair(Color.WHITE_BRIGHT, Color.DARK_BLUE),
+                new ColorPair(Color.YELLOW_BRIGHT, Color.DARK_BLUE),
                 new ColorPair(Color.BLACK, Color.CYAN),
-                new ColorPair(Color.CYAN, Color.BLUE),
-                new ColorPair(Color.CYAN, Color.BLUE),
-                new ColorPair(Color.YELLOW_BRIGHT, Color.BLUE),
+                new ColorPair(Color.CYAN, Color.DARK_BLUE),
+                new ColorPair(Color.CYAN, Color.DARK_BLUE),
+                new ColorPair(Color.YELLOW_BRIGHT, Color.DARK_BLUE),
                 new ColorPair(Color.BLACK, Color.CYAN),
                 new ColorPair(Color.BLACK, Color.CYAN),
-                new ColorPair(Color.WHITE_BRIGHT, Color.BLUE),
+                new ColorPair(Color.WHITE_BRIGHT, Color.DARK_BLUE),
                 new ColorPair(Color.WHITE, Color.BLACK),
-                new ColorPair(Color.YELLOW_BRIGHT, Color.BLUE),
+                new ColorPair(Color.YELLOW_BRIGHT, Color.DARK_BLUE),
                 new ColorPair(Color.BLACK, Color.BLACK)
         );
     }

@@ -47,6 +47,7 @@ public final class TerminalDriver implements Closeable {
         terminal.puts(Capability.enter_ca_mode);
         terminal.puts(Capability.cursor_invisible);
         terminal.puts(Capability.clear_screen);
+        writer.print("\033[?1000h\033[?1002h\033[?1003h\033[?1006h");
         writer.flush();
     }
 
@@ -100,7 +101,7 @@ public final class TerminalDriver implements Closeable {
     }
 
     private void setColors(Color foreground, Color background) {
-        writer.printf("\033[%d;%dm", foreground.foregroundCode(), background.backgroundCode());
+        writer.printf("\033[%s;%sm", foreground.foregroundCode(), background.backgroundCode());
     }
 
     private void ensureBuffers(TerminalSize size) {
@@ -160,6 +161,7 @@ public final class TerminalDriver implements Closeable {
     @Override
     public void close() throws IOException {
         writer.print("\033[0m");
+        writer.print("\033[?1006l\033[?1003l\033[?1002l\033[?1000l");
         terminal.puts(Capability.cursor_visible);
         terminal.puts(Capability.exit_ca_mode);
         if (originalAttributes != null) {

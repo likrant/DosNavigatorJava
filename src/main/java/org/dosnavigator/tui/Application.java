@@ -82,7 +82,8 @@ public abstract class Application implements Closeable {
             return;
         }
         if (key.keyType() == KeyType.Character && key.character() != null
-                && Character.toLowerCase(key.character()) == 'q') {
+                && Character.toLowerCase(key.character()) == 'q'
+                && key.hasModifier(org.dosnavigator.terminal.KeyModifier.CTRL)) {
             commandBus.dispatch(CommandId.QUIT);
             return;
         }

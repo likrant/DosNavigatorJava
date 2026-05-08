@@ -37,16 +37,20 @@ public final class FilePanelWindow extends Window {
     @Override
     public boolean handleKey(KeyStroke key, CommandBus commandBus) {
         boolean handled = switch (key.keyType()) {
-            case ArrowUp, ArrowDown, PageUp, PageDown, Home, End, Enter, Backspace -> true;
+            case ArrowUp, ArrowDown, ArrowLeft, ArrowRight, PageUp, PageDown, Home, End, Enter, Backspace, Insert, GrayPlus, GrayMinus, GrayStar, F9, Character, Mouse -> true;
             default -> false;
         };
         if (handled) {
             int previousSelected = panel.selectedIndex();
             int previousTop = panel.topIndex();
-            panel.handleKey(key);
+            if (key.mouseEvent() != null) {
+                panel.handleMouse(key.mouseEvent(), bounds());
+            } else {
+                panel.handleKey(key);
+            }
             if (panel.topIndex() == previousTop && isSelectionOnlyKey(key)) {
-                dirtyRows.add(previousSelected - panel.topIndex());
-                dirtyRows.add(panel.selectedIndex() - panel.topIndex());
+                dirtyRows.add(previousSelected - panel.topIndex() + 1);
+                dirtyRows.add(panel.selectedIndex() - panel.topIndex() + 1);
                 invalidatePartial();
             } else {
                 forceFullRender = true;
@@ -64,7 +68,7 @@ public final class FilePanelWindow extends Window {
 
     private static boolean isSelectionOnlyKey(KeyStroke key) {
         return switch (key.keyType()) {
-            case ArrowUp, ArrowDown, PageUp, PageDown, Home, End -> true;
+            case ArrowUp, ArrowDown, ArrowLeft, ArrowRight, PageUp, PageDown, Home, End -> true;
             default -> false;
         };
     }

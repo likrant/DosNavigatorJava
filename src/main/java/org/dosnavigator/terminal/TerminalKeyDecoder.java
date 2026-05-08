@@ -19,6 +19,7 @@ public final class TerminalKeyDecoder {
     public static KeyStroke decode(int ch, Input input) throws IOException {
         return switch (ch) {
             case 3 -> KeyStroke.of(KeyType.Escape, KeyModifier.CTRL);
+            case 17 -> KeyStroke.character('q', KeyModifier.CTRL);
             case 27 -> decodeEscape(input);
             case 9 -> KeyStroke.of(KeyType.Tab);
             case 10, 13 -> KeyStroke.of(KeyType.Enter);
@@ -71,6 +72,7 @@ public final class TerminalKeyDecoder {
             case 'F' -> KeyStroke.of(KeyType.End);
             case 'k' -> KeyStroke.of(KeyType.GrayPlus);
             case 'm' -> KeyStroke.of(KeyType.GrayMinus);
+            case 'j' -> KeyStroke.of(KeyType.GrayStar);
             case 'Y' -> KeyStroke.of(KeyType.F10);
             default -> KeyStroke.of(KeyType.Unknown);
         };
@@ -91,6 +93,9 @@ public final class TerminalKeyDecoder {
 
         char finalChar = sequence.charAt(sequence.length() - 1);
         String parameterText = sequence.substring(0, sequence.length() - 1);
+        if (parameterText.startsWith("<") && (finalChar == 'M' || finalChar == 'm')) {
+            return decodeMouse(parameterText, finalChar);
+        }
         List<Integer> parameters = parseParameters(parameterText);
         EnumSet<KeyModifier> modifiers = decodeModifiers(parameters.size() >= 2 ? parameters.get(1) : 1);
 
@@ -105,6 +110,30 @@ public final class TerminalKeyDecoder {
             case '~' -> decodeTilde(parameters, modifiers);
             default -> KeyStroke.of(KeyType.Unknown);
         };
+    }
+
+    private static KeyStroke decodeMouse(String parameterText, char finalChar) {
+        String[] parts = parameterText.substring(1).split(";");
+        if (parts.length != 3) {
+            return KeyStroke.of(KeyType.Unknown);
+        }
+        try {
+            int code = Integer.parseInt(parts[0]);
+            int x = Math.max(0, Integer.parseInt(parts[1]) - 1);
+            int y = Math.max(0, Integer.parseInt(parts[2]) - 1);
+            MouseAction action;
+            int button;
+            if ((code & 64) != 0) {
+                action = (code & 1) == 0 ? MouseAction.WHEEL_UP : MouseAction.WHEEL_DOWN;
+                button = -1;
+            } else {
+                action = finalChar == 'm' ? MouseAction.RELEASE : MouseAction.PRESS;
+                button = code & 3;
+            }
+            return KeyStroke.mouse(new MouseEvent(x, y, button, action));
+        } catch (NumberFormatException e) {
+            return KeyStroke.of(KeyType.Unknown);
+        }
     }
 
     private static KeyStroke decodeTilde(List<Integer> parameters, EnumSet<KeyModifier> modifiers) {
@@ -126,6 +155,7 @@ public final class TerminalKeyDecoder {
             case 21 -> KeyType.F10;
             case 23 -> KeyType.F11;
             case 24 -> KeyType.F12;
+            case 29 -> KeyType.GrayStar;
             default -> KeyType.Unknown;
         };
         return KeyStroke.of(type, modifiers);

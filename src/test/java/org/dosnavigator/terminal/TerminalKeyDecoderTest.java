@@ -45,4 +45,25 @@ class TerminalKeyDecoderTest {
         assertEquals('x', altX.character());
         assertTrue(altX.hasModifier(KeyModifier.ALT));
     }
+
+    @Test
+    void decodesSgrMousePressAndWheel() {
+        KeyStroke click = TerminalKeyDecoder.decodeAnsiSequence("\033[<0;12;7M");
+        KeyStroke wheel = TerminalKeyDecoder.decodeAnsiSequence("\033[<65;12;7M");
+
+        assertEquals(KeyType.Mouse, click.keyType());
+        assertEquals(11, click.mouseEvent().x());
+        assertEquals(6, click.mouseEvent().y());
+        assertEquals(MouseAction.PRESS, click.mouseEvent().action());
+        assertEquals(MouseAction.WHEEL_DOWN, wheel.mouseEvent().action());
+    }
+
+    @Test
+    void decodesCtrlQAsModifiedCharacter() throws Exception {
+        KeyStroke ctrlQ = TerminalKeyDecoder.decode(17, timeout -> -1);
+
+        assertEquals(KeyType.Character, ctrlQ.keyType());
+        assertEquals('q', ctrlQ.character());
+        assertTrue(ctrlQ.hasModifier(KeyModifier.CTRL));
+    }
 }

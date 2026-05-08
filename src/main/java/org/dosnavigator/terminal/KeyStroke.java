@@ -3,11 +3,15 @@ package org.dosnavigator.terminal;
 import java.util.EnumSet;
 import java.util.Set;
 
-public record KeyStroke(KeyType keyType, Character character, EnumSet<KeyModifier> modifiers) {
+public record KeyStroke(KeyType keyType, Character character, EnumSet<KeyModifier> modifiers, MouseEvent mouseEvent) {
     public KeyStroke {
         modifiers = modifiers == null || modifiers.isEmpty()
                 ? EnumSet.noneOf(KeyModifier.class)
                 : EnumSet.copyOf(modifiers);
+    }
+
+    public KeyStroke(KeyType keyType, Character character, EnumSet<KeyModifier> modifiers) {
+        this(keyType, character, modifiers, null);
     }
 
     public static KeyStroke of(KeyType keyType) {
@@ -29,6 +33,10 @@ public record KeyStroke(KeyType keyType, Character character, EnumSet<KeyModifie
 
     public static KeyStroke character(char character, KeyModifier modifier, KeyModifier... rest) {
         return new KeyStroke(KeyType.Character, character, EnumSet.of(modifier, rest));
+    }
+
+    public static KeyStroke mouse(MouseEvent mouseEvent) {
+        return new KeyStroke(KeyType.Mouse, null, EnumSet.noneOf(KeyModifier.class), mouseEvent);
     }
 
     public KeyType getKeyType() {

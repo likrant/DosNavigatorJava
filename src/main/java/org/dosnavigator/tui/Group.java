@@ -89,6 +89,18 @@ public class Group extends View {
 
     @Override
     public boolean handleKey(KeyStroke key, CommandBus commandBus) {
+        if (key.keyType() == org.dosnavigator.terminal.KeyType.Mouse && key.mouseEvent() != null) {
+            for (int i = children.size() - 1; i >= 0; i--) {
+                View child = children.get(i);
+                if (child.visible() && child.bounds().contains(key.mouseEvent().x(), key.mouseEvent().y())) {
+                    if (child.focusable()) {
+                        setCurrent(child);
+                    }
+                    return child.handleKey(key, commandBus);
+                }
+            }
+        }
+
         if (current != null && current.handleKey(key, commandBus)) {
             return true;
         }
