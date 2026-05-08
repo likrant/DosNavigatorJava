@@ -31,6 +31,7 @@ public final class DosNavigatorApp extends Application {
         leftPanel = new FilePanelWindow(new Box(0, 1, 1, 1), new FilePanel(fileSystem, leftDirectory));
         rightPanel = new FilePanelWindow(new Box(1, 1, 1, 1), new FilePanel(fileSystem, rightDirectory));
         menuBar = new MenuBarView(new Box(0, 0, 1, 1));
+        menuBar.setVisible(false);
         desktop = new Desktop(new Box(0, 1, 1, 1));
         statusLine = new StatusLineView(new Box(0, 2, 1, 1), this::activeStatusText);
 
@@ -48,6 +49,7 @@ public final class DosNavigatorApp extends Application {
         commandBus().register(CommandId.PREVIOUS, ignored -> desktop.selectNext(false));
         commandBus().register(CommandId.MENU, ignored -> {
             menuBar.setActive(!menuBar.active());
+            menuBar.setVisible(menuBar.active());
             commandBus().dispatch(menuBar.active() ? CommandId.MENU_ON : CommandId.MENU_OFF);
             return true;
         });
@@ -66,11 +68,15 @@ public final class DosNavigatorApp extends Application {
 
     @Override
     protected void handleKey(KeyStroke key) {
-        if (key.keyType() == KeyType.Tab && !menuBar.active()) {
-            commandBus().dispatch(CommandId.NEXT);
-            return;
+        try {
+            if (key.keyType() == KeyType.Tab && !menuBar.active()) {
+                commandBus().dispatch(CommandId.NEXT);
+                return;
+            }
+            super.handleKey(key);
+        } finally {
+            statusLine.invalidate();
         }
-        super.handleKey(key);
     }
 
     @Override

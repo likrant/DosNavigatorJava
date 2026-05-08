@@ -16,6 +16,10 @@ class TerminalKeyDecoderTest {
 
     @Test
     void decodesNavigationAndEditingKeys() {
+        assertEquals(KeyType.ArrowUp, TerminalKeyDecoder.decodeAnsiSequence("\033OA").keyType());
+        assertEquals(KeyType.ArrowDown, TerminalKeyDecoder.decodeAnsiSequence("\033OB").keyType());
+        assertEquals(KeyType.ArrowRight, TerminalKeyDecoder.decodeAnsiSequence("\033OC").keyType());
+        assertEquals(KeyType.ArrowLeft, TerminalKeyDecoder.decodeAnsiSequence("\033OD").keyType());
         assertEquals(KeyType.Insert, TerminalKeyDecoder.decodeAnsiSequence("\033[2~").keyType());
         assertEquals(KeyType.Delete, TerminalKeyDecoder.decodeAnsiSequence("\033[3~").keyType());
         assertEquals(KeyType.PageUp, TerminalKeyDecoder.decodeAnsiSequence("\033[5~").keyType());

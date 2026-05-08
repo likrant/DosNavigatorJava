@@ -4,6 +4,7 @@ public enum Color {
     BLACK(30, 40),
     BLUE(34, 44),
     CYAN(36, 46),
+    GREEN(32, 42),
     WHITE(37, 47),
     WHITE_BRIGHT(97, 107),
     YELLOW_BRIGHT(93, 103);

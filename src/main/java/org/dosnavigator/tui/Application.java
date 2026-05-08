@@ -61,7 +61,7 @@ public abstract class Application implements Closeable {
     }
 
     protected void render() {
-        terminal.clear(palette.desktop().foreground(), palette.desktop().background());
+        terminal.beginFrame();
         root.render(new RenderContext(terminal, palette));
         terminal.refresh();
     }

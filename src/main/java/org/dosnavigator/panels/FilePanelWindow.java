@@ -6,8 +6,13 @@ import org.dosnavigator.tui.RenderContext;
 import org.dosnavigator.tui.Window;
 import org.dosnavigator.ui.Box;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 public final class FilePanelWindow extends Window {
     private final FilePanel panel;
+    private final Set<Integer> dirtyRows = new LinkedHashSet<>();
+    private boolean forceFullRender;
 
     public FilePanelWindow(Box bounds, FilePanel panel) {
         super(bounds, "");
@@ -20,15 +25,47 @@ public final class FilePanelWindow extends Window {
 
     @Override
     protected void draw(RenderContext context) {
-        panel.render(context.terminal(), bounds(), focused(), context.palette());
+        if (selfInvalid() || forceFullRender || dirtyRows.isEmpty()) {
+            panel.render(context.terminal(), bounds(), focused(), context.palette());
+            forceFullRender = false;
+        } else {
+            panel.renderRows(context.terminal(), bounds(), focused(), context.palette(), dirtyRows);
+        }
+        dirtyRows.clear();
     }
 
     @Override
     public boolean handleKey(KeyStroke key, CommandBus commandBus) {
-        panel.handleKey(key);
-        return switch (key.keyType()) {
+        boolean handled = switch (key.keyType()) {
             case ArrowUp, ArrowDown, PageUp, PageDown, Home, End, Enter, Backspace -> true;
-            default -> super.handleKey(key, commandBus);
+            default -> false;
+        };
+        if (handled) {
+            int previousSelected = panel.selectedIndex();
+            int previousTop = panel.topIndex();
+            panel.handleKey(key);
+            if (panel.topIndex() == previousTop && isSelectionOnlyKey(key)) {
+                dirtyRows.add(previousSelected - panel.topIndex());
+                dirtyRows.add(panel.selectedIndex() - panel.topIndex());
+                invalidatePartial();
+            } else {
+                forceFullRender = true;
+                invalidate();
+            }
+            return true;
+        }
+        return super.handleKey(key, commandBus);
+    }
+
+    @Override
+    protected void onBoundsChanged() {
+        forceFullRender = true;
+    }
+
+    private static boolean isSelectionOnlyKey(KeyStroke key) {
+        return switch (key.keyType()) {
+            case ArrowUp, ArrowDown, PageUp, PageDown, Home, End -> true;
+            default -> false;
         };
     }
 }

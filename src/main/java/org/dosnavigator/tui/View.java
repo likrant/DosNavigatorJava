@@ -11,6 +11,7 @@ public abstract class View {
     private boolean focused;
     private boolean focusable;
     private boolean invalid = true;
+    private boolean selfInvalid = true;
 
     protected View(Box bounds) {
         this.bounds = bounds;
@@ -71,18 +72,32 @@ public abstract class View {
     }
 
     public void invalidate() {
+        selfInvalid = true;
+        markInvalid();
+    }
+
+    protected final void invalidatePartial() {
+        markInvalid();
+    }
+
+    final void markInvalid() {
         invalid = true;
         if (parent != null) {
-            parent.invalidate();
+            parent.markInvalid();
         }
     }
 
     public final void validate() {
         invalid = false;
+        selfInvalid = false;
+    }
+
+    protected final boolean selfInvalid() {
+        return selfInvalid;
     }
 
     public final void render(RenderContext context) {
-        if (!visible) {
+        if (!visible || !invalid) {
             return;
         }
         draw(context);

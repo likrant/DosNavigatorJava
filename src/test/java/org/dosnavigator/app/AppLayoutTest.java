@@ -13,9 +13,9 @@ class AppLayoutTest {
 
         assertEquals(new Box(0, 0, 80, 25), layout.root());
         assertEquals(new Box(0, 0, 80, 1), layout.menuBar());
-        assertEquals(new Box(0, 1, 80, 23), layout.desktop());
-        assertEquals(new Box(0, 1, 40, 23), layout.leftPanel());
-        assertEquals(new Box(40, 1, 40, 23), layout.rightPanel());
+        assertEquals(new Box(0, 0, 80, 24), layout.desktop());
+        assertEquals(new Box(0, 0, 40, 24), layout.leftPanel());
+        assertEquals(new Box(40, 0, 40, 24), layout.rightPanel());
         assertEquals(new Box(0, 24, 80, 1), layout.statusLine());
     }
 
@@ -24,8 +24,8 @@ class AppLayoutTest {
         AppLayout layout = AppLayout.calculate(new TerminalSize(1, 1));
 
         assertEquals(new Box(0, 0, 1, 3), layout.root());
-        assertEquals(new Box(0, 1, 1, 1), layout.leftPanel());
-        assertEquals(new Box(1, 1, 0, 1), layout.rightPanel());
+        assertEquals(new Box(0, 0, 1, 2), layout.leftPanel());
+        assertEquals(new Box(1, 0, 0, 2), layout.rightPanel());
         assertEquals(new Box(0, 2, 1, 1), layout.statusLine());
     }
 }

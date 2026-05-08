@@ -7,7 +7,7 @@ public record AppLayout(Box root, Box menuBar, Box desktop, Box leftPanel, Box r
     public static AppLayout calculate(TerminalSize size) {
         int width = Math.max(1, size.columns());
         int height = Math.max(3, size.rows());
-        int desktopTop = 1;
+        int desktopTop = 0;
         int statusY = height - 1;
         int desktopHeight = Math.max(1, statusY - desktopTop);
         int leftWidth = Math.max(1, width / 2);

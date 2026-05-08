@@ -47,23 +47,24 @@ public final class FilePanel {
         int contentX = box.x() + 1;
         int contentY = box.y() + 1;
         int contentWidth = Math.max(0, box.width() - 2);
-        int contentHeight = Math.max(0, box.height() - 2);
+        int contentHeight = contentHeight(box);
         visibleRows = Math.max(1, contentHeight);
         keepSelectionVisible();
 
         for (int row = 0; row < contentHeight; row++) {
-            int itemIndex = topIndex + row;
-            if (itemIndex >= items.size()) {
-                writeLine(terminal, contentX, contentY + row, contentWidth, "", colors.panel().background(), colors.panel().foreground());
-                continue;
-            }
-
-            FileItem item = items.get(itemIndex);
-            boolean selected = active && itemIndex == selectedIndex;
-            Color background = selected ? colors.selected().background() : colors.panel().background();
-            Color foreground = selected ? colors.selected().foreground() : item.directory() ? Color.YELLOW_BRIGHT : colors.panel().foreground();
-            writeLine(terminal, contentX, contentY + row, contentWidth, formatItem(item, contentWidth), background, foreground);
+            renderContentRow(terminal, box, row, active, colors);
         }
+        renderInfoLine(terminal, box, colors);
+    }
+
+    public void renderRows(TerminalDriver terminal, Box box, boolean active, ColorPalette colors, Iterable<Integer> rows) {
+        int contentHeight = contentHeight(box);
+        for (int row : rows) {
+            if (row >= 0 && row < contentHeight) {
+                renderContentRow(terminal, box, row, active, colors);
+            }
+        }
+        renderInfoLine(terminal, box, colors);
     }
 
     public void handleKey(KeyStroke key) {
@@ -91,6 +92,18 @@ public final class FilePanel {
         FileItem item = items.get(selectedIndex);
         String size = item.directory() ? "<DIR>" : numberFormat.format(item.size()) + " bytes";
         return directory + " | " + item.name() + " | " + size;
+    }
+
+    public int selectedIndex() {
+        return selectedIndex;
+    }
+
+    public int topIndex() {
+        return topIndex;
+    }
+
+    public int visibleRows() {
+        return visibleRows;
     }
 
     private void openSelected() {
@@ -159,11 +172,50 @@ public final class FilePanel {
         topIndex = Math.max(0, Math.min(topIndex, selectedIndex));
     }
 
+    private void renderContentRow(TerminalDriver terminal, Box box, int row, boolean active, ColorPalette colors) {
+        int contentX = box.x() + 1;
+        int contentY = box.y() + 1;
+        int contentWidth = Math.max(0, box.width() - 2);
+        int itemIndex = topIndex + row;
+        if (itemIndex >= items.size()) {
+            writeLine(terminal, contentX, contentY + row, contentWidth, "", colors.panel().background(), colors.panel().foreground());
+            return;
+        }
+
+        FileItem item = items.get(itemIndex);
+        boolean selected = active && itemIndex == selectedIndex;
+        Color background = selected ? colors.selected().background() : colors.panel().background();
+        Color foreground = selected ? colors.selected().foreground() : item.directory() ? Color.YELLOW_BRIGHT : colors.panel().foreground();
+        writeLine(terminal, contentX, contentY + row, contentWidth, formatItem(item, contentWidth), background, foreground);
+    }
+
+    private void renderInfoLine(TerminalDriver terminal, Box box, ColorPalette colors) {
+        int width = Math.max(0, box.width() - 2);
+        if (width <= 0 || box.height() < 4) {
+            return;
+        }
+        String text;
+        if (!message.isBlank()) {
+            text = message;
+        } else if (items.isEmpty()) {
+            text = " empty ";
+        } else {
+            FileItem item = items.get(selectedIndex);
+            String kind = item.directory() ? "<Directory>" : numberFormat.format(item.size()) + " bytes";
+            text = " " + trim(item.name(), Math.max(1, width / 3)) + "  " + kind + "  " + items.size() + " items ";
+        }
+        writeLine(terminal, box.x() + 1, box.y() + box.height() - 2, width, centered(text, width), colors.panel().background(), colors.hotkey().foreground());
+    }
+
     private String formatItem(FileItem item, int width) {
         String size = item.directory() ? "<DIR>" : numberFormat.format(item.size());
         int sizeWidth = Math.min(12, Math.max(5, width / 3));
         int nameWidth = Math.max(1, width - sizeWidth - 1);
         return trim(item.displayName(), nameWidth) + " " + leftPad(size, sizeWidth);
+    }
+
+    private static int contentHeight(Box box) {
+        return Math.max(0, box.height() - 3);
     }
 
     private static void writeLine(
@@ -204,5 +256,11 @@ public final class FilePanel {
             return text.substring(0, width);
         }
         return " ".repeat(width - text.length()) + text;
+    }
+
+    private static String centered(String text, int width) {
+        String trimmed = trim(text, width);
+        int left = Math.max(0, (width - trimmed.length()) / 2);
+        return " ".repeat(left) + trimmed;
     }
 }

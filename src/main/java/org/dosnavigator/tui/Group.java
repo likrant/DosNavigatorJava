@@ -81,7 +81,9 @@ public class Group extends View {
     @Override
     protected void draw(RenderContext context) {
         for (View child : children) {
-            child.render(context);
+            if (child.invalid()) {
+                child.render(context);
+            }
         }
     }
 

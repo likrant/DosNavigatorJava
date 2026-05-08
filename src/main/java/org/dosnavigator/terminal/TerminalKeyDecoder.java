@@ -59,6 +59,10 @@ public final class TerminalKeyDecoder {
     private static KeyStroke decodeApplicationSequence(Input input) throws IOException {
         int second = input.read(50);
         return switch (second) {
+            case 'A' -> KeyStroke.of(KeyType.ArrowUp);
+            case 'B' -> KeyStroke.of(KeyType.ArrowDown);
+            case 'C' -> KeyStroke.of(KeyType.ArrowRight);
+            case 'D' -> KeyStroke.of(KeyType.ArrowLeft);
             case 'P' -> KeyStroke.of(KeyType.F1);
             case 'Q' -> KeyStroke.of(KeyType.F2);
             case 'R' -> KeyStroke.of(KeyType.F3);
