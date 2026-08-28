@@ -4,3 +4,4 @@ target/
 *.log
 files/
 /tests/legacy/DNW-reference/
+/DosNavigator-master/

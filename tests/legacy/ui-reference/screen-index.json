@@ -1,0 +1,2897 @@
+﻿{
+    "schemaVersion":  1,
+    "language":  "Russian",
+    "source":  {
+                   "formsRunId":  "legacy-all-safe-forms-v2-20260828",
+                   "menusRunId":  "legacy-top-menus-20260828",
+                   "resource":  "resources/russian-ui-resources.dnr",
+                   "exclusions":  [
+                                      "utility-ascii-table.png: invalid first capture; not included"
+                                  ]
+               },
+    "rendering":  {
+                      "textGrid":  {
+                                       "cellHeightPx":  14,
+                                       "rows":  50,
+                                       "columns":  160,
+                                       "cellWidthPx":  8
+                                   },
+                      "corePalette":  {
+                                          "black":  "#000000",
+                                          "teal":  "#008080",
+                                          "gray":  "#C0C0C0",
+                                          "green":  "#00FF00",
+                                          "darkGray":  "#808080",
+                                          "yellow":  "#FFFF00",
+                                          "navy":  "#000080",
+                                          "cyan":  "#00FFFF"
+                                      },
+                      "notes":  [
+                                    "Compare DN client content, not Windows title bar or desktop chrome.",
+                                    "Pseudographics, labels, positions, and hotkeys are defined by the decoded DNR resource."
+                                ]
+                  },
+    "screens":  [
+                    {
+                        "id":  "00-startup",
+                        "category":  "forms",
+                        "file":  "forms/00-startup.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  52988
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2669
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  1070
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  219
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  214
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  171
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  144
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  128
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#E8F7F9",
+                                                   "samples":  97
+                                               },
+                                               {
+                                                   "rgb":  "#EDF7ED",
+                                                   "samples":  89
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-colors",
+                        "category":  "forms",
+                        "file":  "forms/settings-colors.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  42134
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  5492
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  4483
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2147
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  2047
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  306
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  235
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  214
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  174
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  156
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  147
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-confirmations",
+                        "category":  "forms",
+                        "file":  "forms/settings-confirmations.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  49117
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2475
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  2445
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  1606
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1148
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  205
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  192
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  186
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  109
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-country",
+                        "category":  "forms",
+                        "file":  "forms/settings-country.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  45580
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  4696
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  2471
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2397
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1633
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  218
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  208
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  147
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  143
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  130
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-editor-viewer",
+                        "category":  "forms",
+                        "file":  "forms/settings-editor-viewer.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  44524
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  4182
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  3502
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2406
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  2116
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  234
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  219
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  199
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  156
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  125
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  102
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-file-manager-groups",
+                        "category":  "forms",
+                        "file":  "forms/settings-file-manager-groups.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  44412
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  6013
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  2321
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2239
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1738
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  209
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  204
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  178
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  169
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  122
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  113
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-file-manager-information",
+                        "category":  "forms",
+                        "file":  "forms/settings-file-manager-information.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  47570
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  3025
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2468
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  2411
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1280
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  209
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  206
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  201
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  156
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  109
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-file-manager-setup",
+                        "category":  "forms",
+                        "file":  "forms/settings-file-manager-setup.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  42804
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  4569
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  4110
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  3049
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2180
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  211
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  207
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  199
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  183
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  157
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  111
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-interface",
+                        "category":  "forms",
+                        "file":  "forms/settings-interface.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  42804
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  5494
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  3884
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  2415
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2180
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  209
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  183
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  140
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  130
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  111
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-mouse",
+                        "category":  "forms",
+                        "file":  "forms/settings-mouse.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  49639
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2475
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  2226
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  1680
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  826
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  204
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  187
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  134
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  109
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-panel-filter",
+                        "category":  "forms",
+                        "file":  "forms/settings-panel-filter.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  46104
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  3727
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  3207
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2420
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1248
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  246
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  214
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  179
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  151
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-panel-sort",
+                        "category":  "forms",
+                        "file":  "forms/settings-panel-sort.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  44589
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  4663
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  3298
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2413
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1708
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  248
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  211
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  206
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  155
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-panel-view",
+                        "category":  "forms",
+                        "file":  "forms/settings-panel-view.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  43013
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  4558
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  4181
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  2695
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2247
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  235
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  213
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  204
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  168
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  128
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  111
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-printer",
+                        "category":  "forms",
+                        "file":  "forms/settings-printer.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  49031
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2475
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  2333
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  2020
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  939
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  204
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  196
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  174
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  109
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-savers",
+                        "category":  "forms",
+                        "file":  "forms/settings-savers.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  45917
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  3677
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  3502
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2420
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1156
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  276
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  203
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  190
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  155
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  126
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-startup",
+                        "category":  "forms",
+                        "file":  "forms/settings-startup.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  44346
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  6557
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  2380
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2311
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1125
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  204
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  200
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  187
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  185
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  122
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  114
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "settings-system",
+                        "category":  "forms",
+                        "file":  "forms/settings-system.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  43729
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  6364
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  2803
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2260
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1524
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  218
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  208
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  205
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  200
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  130
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  111
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "utility-calculator",
+                        "category":  "forms",
+                        "file":  "forms/utility-calculator.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  45925
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  4041
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  3282
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2155
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1268
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  227
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  213
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  175
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  121
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "utility-calendar",
+                        "category":  "forms",
+                        "file":  "forms/utility-calendar.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  50325
+                                               },
+                                               {
+                                                   "rgb":  "#C0C0C0",
+                                                   "samples":  2733
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2277
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  818
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  798
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  212
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  154
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  108
+                                               },
+                                               {
+                                                   "rgb":  "#E8F7F9",
+                                                   "samples":  100
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  99
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "menu-disk",
+                        "category":  "menus",
+                        "file":  "menus/menu-disk.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  50983
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2607
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  2406
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  842
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  224
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  214
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  184
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  128
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  120
+                                               },
+                                               {
+                                                   "rgb":  "#E8F7F9",
+                                                   "samples":  97
+                                               },
+                                               {
+                                                   "rgb":  "#EDF7ED",
+                                                   "samples":  89
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "menu-file",
+                        "category":  "menus",
+                        "file":  "menus/menu-file.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  46974
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  5486
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2410
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  2115
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  220
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  214
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  150
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  97
+                                               },
+                                               {
+                                                   "rgb":  "#E8F7F9",
+                                                   "samples":  97
+                                               },
+                                               {
+                                                   "rgb":  "#EDF7ED",
+                                                   "samples":  89
+                                               },
+                                               {
+                                                   "rgb":  "#E8F8F9",
+                                                   "samples":  83
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "menu-manager",
+                        "category":  "menus",
+                        "file":  "menus/menu-manager.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  47970
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  4483
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2539
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1912
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  214
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  201
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  196
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  108
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  99
+                                               },
+                                               {
+                                                   "rgb":  "#E8F7F9",
+                                                   "samples":  97
+                                               },
+                                               {
+                                                   "rgb":  "#EDF7ED",
+                                                   "samples":  89
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "menu-panel",
+                        "category":  "menus",
+                        "file":  "menus/menu-panel.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  47465
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  4946
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2505
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1956
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  223
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  221
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  214
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  108
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  99
+                                               },
+                                               {
+                                                   "rgb":  "#E8F7F9",
+                                                   "samples":  97
+                                               },
+                                               {
+                                                   "rgb":  "#EDF7ED",
+                                                   "samples":  89
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "menu-settings",
+                        "category":  "menus",
+                        "file":  "menus/menu-settings.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  46574
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  5662
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2525
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  2041
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  220
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  214
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  180
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#808080",
+                                                   "samples":  119
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  109
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  97
+                                               },
+                                               {
+                                                   "rgb":  "#E8F7F9",
+                                                   "samples":  97
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "menu-utilities",
+                        "category":  "menus",
+                        "file":  "menus/menu-utilities.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  47639
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  4712
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2517
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  2024
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  214
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  211
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  199
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  108
+                                               },
+                                               {
+                                                   "rgb":  "#00FF00",
+                                                   "samples":  99
+                                               },
+                                               {
+                                                   "rgb":  "#E8F7F9",
+                                                   "samples":  97
+                                               },
+                                               {
+                                                   "rgb":  "#EDF7ED",
+                                                   "samples":  89
+                                               }
+                                           ]
+                    },
+                    {
+                        "id":  "menu-windows",
+                        "category":  "menus",
+                        "file":  "menus/menu-windows.png",
+                        "widthPx":  1296,
+                        "heightPx":  759,
+                        "expectedTextGrid":  {
+                                                 "cellHeightPx":  14,
+                                                 "rows":  50,
+                                                 "columns":  160,
+                                                 "cellWidthPx":  8
+                                             },
+                        "logicalClient":  {
+                                              "xPx":  8,
+                                              "heightPx":  700,
+                                              "yPx":  31,
+                                              "widthPx":  1280
+                                          },
+                        "sampledPalette":  [
+                                               {
+                                                   "rgb":  "#000080",
+                                                   "samples":  47778
+                                               },
+                                               {
+                                                   "rgb":  "#008080",
+                                                   "samples":  5023
+                                               },
+                                               {
+                                                   "rgb":  "#00FFFF",
+                                                   "samples":  2510
+                                               },
+                                               {
+                                                   "rgb":  "#000000",
+                                                   "samples":  1647
+                                               },
+                                               {
+                                                   "rgb":  "#FFFF00",
+                                                   "samples":  225
+                                               },
+                                               {
+                                                   "rgb":  "#E9F7F9",
+                                                   "samples":  214
+                                               },
+                                               {
+                                                   "rgb":  "#EBF6F9",
+                                                   "samples":  202
+                                               },
+                                               {
+                                                   "rgb":  "#EDF5F8",
+                                                   "samples":  191
+                                               },
+                                               {
+                                                   "rgb":  "#F2F2F2",
+                                                   "samples":  163
+                                               },
+                                               {
+                                                   "rgb":  "#EAF6F9",
+                                                   "samples":  159
+                                               },
+                                               {
+                                                   "rgb":  "#ECF5F9",
+                                                   "samples":  139
+                                               },
+                                               {
+                                                   "rgb":  "#EAF7F9",
+                                                   "samples":  131
+                                               },
+                                               {
+                                                   "rgb":  "#008000",
+                                                   "samples":  101
+                                               },
+                                               {
+                                                   "rgb":  "#E8F7F9",
+                                                   "samples":  97
+                                               },
+                                               {
+                                                   "rgb":  "#EDF7ED",
+                                                   "samples":  89
+                                               },
+                                               {
+                                                   "rgb":  "#E8F8F9",
+                                                   "samples":  83
+                                               }
+                                           ]
+                    }
+                ],
+    "screenContracts":  [
+                            {
+                                "command":  "main-panel",
+                                "screen":  "00-startup",
+                                "dialog":  null
+                            },
+                            {
+                                "command":  "cmSystemSetup",
+                                "screen":  "settings-system",
+                                "dialog":  "dlgSystemSetup"
+                            },
+                            {
+                                "command":  "cmStartup",
+                                "screen":  "settings-startup",
+                                "dialog":  "dlgStartupSetup"
+                            },
+                            {
+                                "command":  "cmInterfaceSetup",
+                                "screen":  "settings-interface",
+                                "dialog":  "dlgInterfaceSetup"
+                            },
+                            {
+                                "command":  "cmSetupConfirmation",
+                                "screen":  "settings-confirmations",
+                                "dialog":  "dlgConfirmations"
+                            },
+                            {
+                                "command":  "cmSaversSetup",
+                                "screen":  "settings-savers",
+                                "dialog":  null
+                            },
+                            {
+                                "command":  "cmSetupPrinter",
+                                "screen":  "settings-printer",
+                                "dialog":  "dlgPrinterSetup"
+                            },
+                            {
+                                "command":  "cmCountrySetup",
+                                "screen":  "settings-country",
+                                "dialog":  "dlgCountrySetup"
+                            },
+                            {
+                                "command":  "cmSetupMouse",
+                                "screen":  "settings-mouse",
+                                "dialog":  "dlgMouseSetup"
+                            },
+                            {
+                                "command":  "cmEditorDefaults",
+                                "screen":  "settings-editor-viewer",
+                                "dialog":  "dlgEditorDefaults"
+                            },
+                            {
+                                "command":  "cmFMSetup",
+                                "screen":  "settings-file-manager-setup",
+                                "dialog":  "dlgFMSetup"
+                            },
+                            {
+                                "command":  "cmDriveInfoSetup",
+                                "screen":  "settings-file-manager-information",
+                                "dialog":  "dlgDriveInfoSetup"
+                            },
+                            {
+                                "command":  "cmHighlightGroups",
+                                "screen":  "settings-file-manager-groups",
+                                "dialog":  "dlgHighlightGroups"
+                            },
+                            {
+                                "command":  "cmPanelShowSetup",
+                                "screen":  "settings-panel-view",
+                                "dialog":  "dlgPanelShowSetup"
+                            },
+                            {
+                                "command":  "cmPanelSortSetup",
+                                "screen":  "settings-panel-sort",
+                                "dialog":  "dlgPanelSortSetup"
+                            },
+                            {
+                                "command":  "cmAdvFilter",
+                                "screen":  "settings-panel-filter",
+                                "dialog":  "dlgAdvancedFilter"
+                            },
+                            {
+                                "command":  "cmChangeColors",
+                                "screen":  "settings-colors",
+                                "dialog":  null
+                            },
+                            {
+                                "command":  "cmCalculator",
+                                "screen":  "utility-calculator",
+                                "dialog":  "dlgCalculator"
+                            },
+                            {
+                                "command":  "cmCalendar",
+                                "screen":  "utility-calendar",
+                                "dialog":  null
+                            }
+                        ],
+    "dialogs":  [
+                    {
+                        "id":  "dlgCountrySetup",
+                        "x":  54,
+                        "y":  22,
+                        "title":  "Информация о стране"
+                    },
+                    {
+                        "id":  "dlgConfirmations",
+                        "x":  47,
+                        "y":  13,
+                        "title":  "Подтверждение"
+                    },
+                    {
+                        "id":  "dlgGotoAddress",
+                        "x":  34,
+                        "y":  7,
+                        "title":  "Пеpеход на адpес"
+                    },
+                    {
+                        "id":  "dlgAdvanceSearch",
+                        "x":  55,
+                        "y":  15,
+                        "title":  "Расширенный поиск"
+                    },
+                    {
+                        "id":  "dlgReenterPassword",
+                        "x":  39,
+                        "y":  7,
+                        "title":  "Повтори пароль"
+                    },
+                    {
+                        "id":  "dlgArchiveFiles",
+                        "x":  68,
+                        "y":  21,
+                        "title":  "Архивирование файлов"
+                    },
+                    {
+                        "id":  "dlgMouseSetup",
+                        "x":  41,
+                        "y":  13,
+                        "title":  "Установки мышки"
+                    },
+                    {
+                        "id":  "dlgInterfaceSetup",
+                        "x":  76,
+                        "y":  22,
+                        "title":  "Установки интерфейса"
+                    },
+                    {
+                        "id":  "dlgSetupTerminal",
+                        "x":  63,
+                        "y":  15,
+                        "title":  "Hастройки терминала"
+                    },
+                    {
+                        "id":  "dlgSetupModem",
+                        "x":  66,
+                        "y":  21,
+                        "title":  "Коммуникационные установки"
+                    },
+                    {
+                        "id":  "dlgEditorDefaults",
+                        "x":  59,
+                        "y":  23,
+                        "title":  "Установки pедактоpа/пpосмотpа"
+                    },
+                    {
+                        "id":  "dlgAppendNumber",
+                        "x":  44,
+                        "y":  13,
+                        "title":  "Добавление записи"
+                    },
+                    {
+                        "id":  "dlgEditNumber",
+                        "x":  44,
+                        "y":  13,
+                        "title":  "Редактирование записи"
+                    },
+                    {
+                        "id":  "dlgAppendDirectory",
+                        "x":  44,
+                        "y":  13,
+                        "title":  "Добавить раздел"
+                    },
+                    {
+                        "id":  "dlgEditDirectory",
+                        "x":  44,
+                        "y":  13,
+                        "title":  "Редактирование раздела"
+                    },
+                    {
+                        "id":  "dlgPrinterSetup",
+                        "x":  48,
+                        "y":  13,
+                        "title":  "Hастройки принтера"
+                    },
+                    {
+                        "id":  "dlgGameSetup",
+                        "x":  53,
+                        "y":  15,
+                        "title":  "Установки игры"
+                    },
+                    {
+                        "id":  "dlgDbFind",
+                        "x":  55,
+                        "y":  12,
+                        "title":  "Поиск"
+                    },
+                    {
+                        "id":  "dlgReplaceCell",
+                        "x":  52,
+                        "y":  17,
+                        "title":  "Замена"
+                    },
+                    {
+                        "id":  "dlgFindCell",
+                        "x":  49,
+                        "y":  13,
+                        "title":  "Поиск"
+                    },
+                    {
+                        "id":  "dlgGotoCellNumber",
+                        "x":  41,
+                        "y":  7,
+                        "title":  "Перейти к ячейке"
+                    },
+                    {
+                        "id":  "dlgSetCellFormat",
+                        "x":  42,
+                        "y":  17,
+                        "title":  "Ячейка/блок Формат"
+                    },
+                    {
+                        "id":  "dlgHighlightGroups",
+                        "x":  78,
+                        "y":  18,
+                        "title":  "Выделение групп"
+                    },
+                    {
+                        "id":  "dlgGotoLine",
+                        "x":  38,
+                        "y":  7,
+                        "title":  "Перейти к строке"
+                    },
+                    {
+                        "id":  "dlgEditorFormat",
+                        "x":  39,
+                        "y":  11,
+                        "title":  "Отступы"
+                    },
+                    {
+                        "id":  "dlgEditorFind",
+                        "x":  57,
+                        "y":  16,
+                        "title":  "Поиск"
+                    },
+                    {
+                        "id":  "dlgEditorReplace",
+                        "x":  57,
+                        "y":  18,
+                        "title":  "Замена"
+                    },
+                    {
+                        "id":  "dlgFileFind",
+                        "x":  56,
+                        "y":  19,
+                        "title":  "Поиск файла"
+                    },
+                    {
+                        "id":  "dlgArcFileFind",
+                        "x":  54,
+                        "y":  11,
+                        "title":  "Поиск файла в архиве"
+                    },
+                    {
+                        "id":  "dlgFoundFileFind",
+                        "x":  54,
+                        "y":  18,
+                        "title":  "Поиск файла в "
+                    },
+                    {
+                        "id":  "dlgFoundArcFileFind",
+                        "x":  54,
+                        "y":  11,
+                        "title":  "Поиск файла в "
+                    },
+                    {
+                        "id":  "dlgMkDir",
+                        "x":  69,
+                        "y":  7,
+                        "title":  "Создать каталог"
+                    },
+                    {
+                        "id":  "dlgRenFl",
+                        "x":  70,
+                        "y":  7,
+                        "title":  "Быстpое пеpеименование"
+                    },
+                    {
+                        "id":  "dlgCopyDialog",
+                        "x":  78,
+                        "y":  15,
+                        "title":  "Копирование"
+                    },
+                    {
+                        "id":  "dlgMakeList",
+                        "x":  69,
+                        "y":  20,
+                        "title":  "Создать список файлов"
+                    },
+                    {
+                        "id":  "dlgDiskError",
+                        "x":  43,
+                        "y":  10,
+                        "title":  "Дисковая ошибка"
+                    },
+                    {
+                        "id":  "dlgPanelShowSetup",
+                        "x":  74,
+                        "y":  22,
+                        "title":  "Вид файловых панелей"
+                    },
+                    {
+                        "id":  "dlgSavePanelSetup",
+                        "x":  46,
+                        "y":  18,
+                        "title":  "Записать настройки панели"
+                    },
+                    {
+                        "id":  "dlgFileAttr",
+                        "x":  54,
+                        "y":  15,
+                        "title":  "Атрибуты файла"
+                    },
+                    {
+                        "id":  "dlgFilesAttr",
+                        "x":  59,
+                        "y":  15,
+                        "title":  "Атрибуты файлов"
+                    },
+                    {
+                        "id":  "dlgCompareDirs",
+                        "x":  42,
+                        "y":  17,
+                        "title":  "Сравнить каталоги"
+                    },
+                    {
+                        "id":  "dlgSetPassword",
+                        "x":  39,
+                        "y":  7,
+                        "title":  "Введите пароль"
+                    },
+                    {
+                        "id":  "dlgLoginPassword",
+                        "x":  49,
+                        "y":  10,
+                        "title":  "Введите имя пользователя и пароль"
+                    },
+                    {
+                        "id":  "dlgExtract",
+                        "x":  49,
+                        "y":  14,
+                        "title":  "Извлечь файлы"
+                    },
+                    {
+                        "id":  "dlgCommandsHistory",
+                        "x":  78,
+                        "y":  17,
+                        "title":  "Истоpия команд"
+                    },
+                    {
+                        "id":  "dlgDirectoryHistory",
+                        "x":  78,
+                        "y":  17,
+                        "title":  "Истоpия смены каталогов"
+                    },
+                    {
+                        "id":  "dlgEditHistory",
+                        "x":  78,
+                        "y":  17,
+                        "title":  "Истоpия редактирования файлов"
+                    },
+                    {
+                        "id":  "dlgViewHistory",
+                        "x":  78,
+                        "y":  17,
+                        "title":  "Истоpия просмотра файлов"
+                    },
+                    {
+                        "id":  "dlgSetupArc",
+                        "x":  78,
+                        "y":  22,
+                        "title":  "Установки архиватора"
+                    },
+                    {
+                        "id":  "dlgSelect",
+                        "x":  27,
+                        "y":  9,
+                        "title":  "Выбор"
+                    },
+                    {
+                        "id":  "dlgUnselect",
+                        "x":  27,
+                        "y":  9,
+                        "title":  "Отмена"
+                    },
+                    {
+                        "id":  "dlgPhoneBook",
+                        "x":  62,
+                        "y":  20,
+                        "title":  "Телефонная книжка"
+                    },
+                    {
+                        "id":  "dlgManualDial",
+                        "x":  47,
+                        "y":  7,
+                        "title":  "Набор телефонного номера"
+                    },
+                    {
+                        "id":  "dlgCalculator",
+                        "x":  64,
+                        "y":  16,
+                        "title":  "Калькулятор"
+                    },
+                    {
+                        "id":  "dlgCalcFormat",
+                        "x":  28,
+                        "y":  18,
+                        "title":  "Точность"
+                    },
+                    {
+                        "id":  "dlgWindowManager",
+                        "x":  70,
+                        "y":  14,
+                        "title":  "Менеджер окон"
+                    },
+                    {
+                        "id":  "dlgVolumeLabel",
+                        "x":  28,
+                        "y":  7,
+                        "title":  "Метка диска"
+                    },
+                    {
+                        "id":  "dlgEditEnvironment",
+                        "x":  57,
+                        "y":  20,
+                        "title":  "Редактор переменных окружения ОС"
+                    },
+                    {
+                        "id":  "dlgTetrisWinner",
+                        "x":  55,
+                        "y":  7,
+                        "title":  "Вы попали в десятку лучших!"
+                    },
+                    {
+                        "id":  "dlgSplitFile",
+                        "x":  50,
+                        "y":  15,
+                        "title":  "Рассечь файл"
+                    },
+                    {
+                        "id":  "dlgCombineFile",
+                        "x":  50,
+                        "y":  8,
+                        "title":  "Склеить файл"
+                    },
+                    {
+                        "id":  "dlgNextSection",
+                        "x":  76,
+                        "y":  8,
+                        "title":  "Склеивание файла"
+                    },
+                    {
+                        "id":  "dlgPentixTop10",
+                        "x":  59,
+                        "y":  18,
+                        "title":  "Таблица pекоpдов Пентикса"
+                    },
+                    {
+                        "id":  "dlgTetrisTop10",
+                        "x":  59,
+                        "y":  18,
+                        "title":  "Таблица pекоpдов Тетpиса"
+                    },
+                    {
+                        "id":  "dlgUUDecode",
+                        "x":  49,
+                        "y":  11,
+                        "title":  "Pаскодиpование UU-файлов"
+                    },
+                    {
+                        "id":  "dlgUUEncode",
+                        "x":  60,
+                        "y":  17,
+                        "title":  "UU-кодиpование"
+                    },
+                    {
+                        "id":  "dlgOverwriteQuery",
+                        "x":  72,
+                        "y":  13,
+                        "title":  "Пpедупpеждение"
+                    },
+                    {
+                        "id":  "dlgQueryAbort",
+                        "x":  40,
+                        "y":  10,
+                        "title":  "Подтвержение"
+                    },
+                    {
+                        "id":  "dlgAppendQuery",
+                        "x":  60,
+                        "y":  13,
+                        "title":  "Выбор"
+                    },
+                    {
+                        "id":  "dlgAdvancedFilter",
+                        "x":  56,
+                        "y":  20,
+                        "title":  "Фильтр"
+                    },
+                    {
+                        "id":  "dlgViewerFind",
+                        "x":  50,
+                        "y":  15,
+                        "title":  "Поиск"
+                    },
+                    {
+                        "id":  "dlgPanelSortSetup",
+                        "x":  64,
+                        "y":  21,
+                        "title":  "Сортировка"
+                    },
+                    {
+                        "id":  "dlgFMSetup",
+                        "x":  76,
+                        "y":  22,
+                        "title":  "Установки Менеджера Файлов"
+                    },
+                    {
+                        "id":  "dlgDriveInfoSetup",
+                        "x":  61,
+                        "y":  14,
+                        "title":  "Установки панели информации"
+                    },
+                    {
+                        "id":  "dlgStartupSetup",
+                        "x":  70,
+                        "y":  20,
+                        "title":  "Процесс загрузки и выгрузки"
+                    },
+                    {
+                        "id":  "dlgArvidFileFind",
+                        "x":  52,
+                        "y":  13,
+                        "title":  "Поиск файла"
+                    },
+                    {
+                        "id":  "dlgSystemSetup",
+                        "x":  72,
+                        "y":  21,
+                        "title":  "Системные установки"
+                    },
+                    {
+                        "id":  "dlgAdvancedCOMSetup",
+                        "x":  45,
+                        "y":  15,
+                        "title":  "Pасшиpенные установки поpта"
+                    },
+                    {
+                        "id":  "dlgCpuFlagInfo",
+                        "x":  60,
+                        "y":  23,
+                        "title":  "CPU Flag Info"
+                    },
+                    {
+                        "id":  "dlgFTNInfo",
+                        "x":  60,
+                        "y":  8,
+                        "title":  "Настройка FTN"
+                    },
+                    {
+                        "id":  "dlgSrchFailed",
+                        "x":  56,
+                        "y":  8,
+                        "title":  "Файл не найден"
+                    },
+                    {
+                        "id":  "dlgSetupColumnsDisk",
+                        "x":  70,
+                        "y":  21,
+                        "title":  "Установки колонок - Диск"
+                    },
+                    {
+                        "id":  "dlgSetupColumnsFind",
+                        "x":  70,
+                        "y":  21,
+                        "title":  "Установки колонок - Поиск"
+                    },
+                    {
+                        "id":  "dlgSetupColumnsTemp",
+                        "x":  70,
+                        "y":  21,
+                        "title":  "Установки колонок - TEMP"
+                    },
+                    {
+                        "id":  "dlgSetupColumnsArch",
+                        "x":  70,
+                        "y":  18,
+                        "title":  "Установки колонок - Аpхив"
+                    },
+                    {
+                        "id":  "dlgSetupColumnsArvd",
+                        "x":  70,
+                        "y":  17,
+                        "title":  "Установки колонок - ARVID"
+                    },
+                    {
+                        "id":  "dlgNameCase",
+                        "x":  40,
+                        "y":  12,
+                        "title":  "Изменение регистpа имён"
+                    },
+                    {
+                        "id":  "dlgChScreenMode",
+                        "x":  36,
+                        "y":  12,
+                        "title":  "Сменить видеорежим"
+                    },
+                    {
+                        "id":  "dlgSetExportCsvFormat",
+                        "x":  46,
+                        "y":  16,
+                        "title":  "Формат экспорта в CSV"
+                    },
+                    {
+                        "id":  "dlgDBFGoto",
+                        "x":  41,
+                        "y":  9,
+                        "title":  "Переход к строке/столбцу"
+                    },
+                    {
+                        "id":  "dlgSkipBadFile",
+                        "x":  54,
+                        "y":  8,
+                        "title":  "Нет доступа"
+                    }
+                ],
+    "menus":  [
+                  "dlgEditorMenu",
+                  "dlgFixerMenu",
+                  "dlgMainMenu",
+                  "dlgWkzMenuBar"
+              ]
+}
