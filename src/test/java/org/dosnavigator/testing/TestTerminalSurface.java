@@ -15,6 +15,8 @@ public final class TestTerminalSurface implements TerminalSurface {
     private final Cell[][] frontBuffer;
     private final Cell[][] backBuffer;
     private final Deque<KeyStroke> queuedKeys = new ArrayDeque<>();
+    private TerminalSnapshot.Cursor cursor = new TerminalSnapshot.Cursor(0, 0, false);
+    private String activeView = "";
 
     public TestTerminalSurface(TerminalSize size) {
         this.size = size;
@@ -80,7 +82,17 @@ public final class TestTerminalSurface implements TerminalSurface {
     }
 
     public TerminalSnapshot snapshot() {
-        return TerminalSnapshot.from(frontBuffer);
+        return TerminalSnapshot.from(frontBuffer, cursor, activeView);
+    }
+
+    @Override
+    public void setCursor(int x, int y, boolean visible) {
+        cursor = new TerminalSnapshot.Cursor(x, y, visible);
+    }
+
+    @Override
+    public void setActiveView(String activeView) {
+        this.activeView = activeView == null ? "" : activeView;
     }
 
     @Override

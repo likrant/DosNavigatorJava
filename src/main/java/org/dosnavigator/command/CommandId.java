@@ -12,7 +12,11 @@ public enum CommandId {
     OK(10, "cmOK"),
     CANCEL(11, "cmCancel"),
     MENU_ON(10022, "cmMenuOn"),
-    MENU_OFF(10023, "cmMenuOff");
+    MENU_OFF(10023, "cmMenuOff"),
+    SYSTEM_SETUP(10600, "cmSystemSetup"),
+    INTERFACE_SETUP(10611, "cmInterfaceSetup"),
+    ABOUT(3008, "cmAbout"),
+    REFRESH(3009, "cmRefresh");
 
     private final int pascalId;
     private final String legacyName;

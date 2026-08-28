@@ -18,5 +18,13 @@ public interface TerminalSurface extends Closeable {
 
     void refresh();
 
+    /** Optional Frame metadata; interactive drivers may ignore it. */
+    default void setCursor(int x, int y, boolean visible) {
+    }
+
+    /** Optional active-view metadata used by headless Frame assertions. */
+    default void setActiveView(String activeView) {
+    }
+
     KeyStroke readKey() throws IOException;
 }
