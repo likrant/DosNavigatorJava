@@ -8,7 +8,7 @@ import org.dosnavigator.terminal.KeyModifier;
 import org.dosnavigator.terminal.KeyStroke;
 import org.dosnavigator.terminal.MouseAction;
 import org.dosnavigator.terminal.MouseEvent;
-import org.dosnavigator.terminal.TerminalDriver;
+import org.dosnavigator.terminal.TerminalSurface;
 import org.dosnavigator.ui.Box;
 import org.dosnavigator.ui.ColorPalette;
 
@@ -80,7 +80,7 @@ public final class FilePanel {
         reload();
     }
 
-    public void render(TerminalDriver terminal, Box box, boolean active, ColorPalette colors) {
+    public void render(TerminalSurface terminal, Box box, boolean active, ColorPalette colors) {
         Color borderColor = active ? colors.activeBorder().foreground() : colors.inactiveBorder().foreground();
         box.draw(terminal, borderColor, colors.panel().background());
 
@@ -109,7 +109,7 @@ public final class FilePanel {
         }
     }
 
-    public void renderRows(TerminalDriver terminal, Box box, boolean active, ColorPalette colors, Iterable<Integer> rows) {
+    public void renderRows(TerminalSurface terminal, Box box, boolean active, ColorPalette colors, Iterable<Integer> rows) {
         render(terminal, box, active, colors);
     }
 
@@ -530,7 +530,7 @@ public final class FilePanel {
         topIndex = Math.max(0, Math.min(topIndex, selectedIndex));
     }
 
-    private void renderHeader(TerminalDriver terminal, Box box, ColorPalette colors) {
+    private void renderHeader(TerminalSurface terminal, Box box, ColorPalette colors) {
         int width = Math.max(0, box.width() - 2);
         if (width <= 0 || contentHeight(box) <= 0) {
             return;
@@ -542,7 +542,7 @@ public final class FilePanel {
         terminal.putString(box.x() + 1, box.y(), sortIndicator(), colors.panelTitle().foreground(), colors.panel().background());
     }
 
-    private void renderContentRow(TerminalDriver terminal, Box box, int row, boolean active, ColorPalette colors) {
+    private void renderContentRow(TerminalSurface terminal, Box box, int row, boolean active, ColorPalette colors) {
         int contentX = box.x() + 1;
         int contentY = box.y() + 1;
         int contentWidth = panelListWidth(box);
@@ -569,7 +569,7 @@ public final class FilePanel {
     }
 
     private void renderBriefContentRow(
-            TerminalDriver terminal,
+            TerminalSurface terminal,
             int x,
             int y,
             int width,
@@ -617,7 +617,7 @@ public final class FilePanel {
         }
     }
 
-    private void renderFooter(TerminalDriver terminal, Box box, ColorPalette colors) {
+    private void renderFooter(TerminalSurface terminal, Box box, ColorPalette colors) {
         int width = Math.max(0, box.width() - 2);
         if (width <= 0 || box.height() < FOOTER_HEIGHT + 2) {
             return;
@@ -714,7 +714,7 @@ public final class FilePanel {
         };
     }
 
-    private void renderScrollbar(TerminalDriver terminal, Box box, ColorPalette colors) {
+    private void renderScrollbar(TerminalSurface terminal, Box box, ColorPalette colors) {
         int trackX = box.x() + box.width() - 1;
         int top = box.y() + 1;
         int bottom = box.y() + box.height() - FOOTER_HEIGHT - 2;
@@ -882,7 +882,7 @@ public final class FilePanel {
         }
     }
 
-    private void renderSortPopup(TerminalDriver terminal, Box panelBox, ColorPalette colors) {
+    private void renderSortPopup(TerminalSurface terminal, Box panelBox, ColorPalette colors) {
         int width = 22;
         int height = SORT_POPUP_ITEMS.size() + 2;
         int x = Math.max(panelBox.x() + 1, Math.min(panelBox.x() + panelBox.width() - width - 1, panelBox.x() + 2));
@@ -976,7 +976,7 @@ public final class FilePanel {
     }
 
     private static void writeLine(
-            TerminalDriver terminal,
+            TerminalSurface terminal,
             int x,
             int y,
             int width,

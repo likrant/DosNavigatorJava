@@ -5,6 +5,7 @@ import org.dosnavigator.command.CommandId;
 import org.dosnavigator.terminal.KeyStroke;
 import org.dosnavigator.terminal.KeyType;
 import org.dosnavigator.terminal.TerminalDriver;
+import org.dosnavigator.terminal.TerminalSurface;
 import org.dosnavigator.terminal.TerminalSize;
 import org.dosnavigator.ui.Box;
 import org.dosnavigator.ui.ColorPalette;
@@ -13,22 +14,27 @@ import java.io.Closeable;
 import java.io.IOException;
 
 public abstract class Application implements Closeable {
-    private final TerminalDriver terminal;
+    private final TerminalSurface terminal;
     private final CommandBus commandBus = new CommandBus();
     private final ColorPalette palette = ColorPalette.dosNavigator();
     private Group root = new Group(new Box(0, 0, 1, 1));
     private boolean running = true;
+    private boolean started;
     private TerminalSize lastSize = new TerminalSize(0, 0);
 
     protected Application(String terminalName) throws IOException {
-        terminal = new TerminalDriver(terminalName);
+        this(new TerminalDriver(terminalName));
+    }
+
+    protected Application(TerminalSurface terminal) {
+        this.terminal = terminal;
         commandBus.register(CommandId.QUIT, ignored -> {
             running = false;
             return true;
         });
     }
 
-    protected final TerminalDriver terminal() {
+    protected final TerminalSurface terminal() {
         return terminal;
     }
 
@@ -48,22 +54,42 @@ public abstract class Application implements Closeable {
         this.root = root;
     }
 
-    public final void run() throws IOException {
+    public final void start() throws IOException {
+        if (started) {
+            return;
+        }
         terminal.start();
         resizeIfNeeded(true);
-
-        while (running) {
-            render();
-            KeyStroke key = terminal.readKey();
-            resizeIfNeeded(false);
-            handleKey(key);
-        }
+        started = true;
     }
 
-    protected void render() {
+    public final void renderFrame() {
         terminal.beginFrame();
         root.render(new RenderContext(terminal, palette));
         terminal.refresh();
+    }
+
+    public final void dispatchKey(KeyStroke key) {
+        resizeIfNeeded(false);
+        handleKey(key);
+    }
+
+    public final boolean running() {
+        return running;
+    }
+
+    public final void stop() {
+        running = false;
+    }
+
+    public final void run() throws IOException {
+        start();
+
+        while (running) {
+            renderFrame();
+            KeyStroke key = terminal.readKey();
+            dispatchKey(key);
+        }
     }
 
     private void resizeIfNeeded(boolean force) {
@@ -102,7 +128,7 @@ public abstract class Application implements Closeable {
         root.add(dialog);
         root.setCurrent(dialog);
         while (dialog.endState().isEmpty() && running) {
-            render();
+            renderFrame();
             dialog.handleKey(terminal.readKey(), commandBus);
         }
         root.remove(dialog);

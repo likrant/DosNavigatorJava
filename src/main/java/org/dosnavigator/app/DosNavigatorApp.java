@@ -6,6 +6,7 @@ import org.dosnavigator.panels.FilePanel;
 import org.dosnavigator.panels.FilePanelWindow;
 import org.dosnavigator.terminal.KeyStroke;
 import org.dosnavigator.terminal.KeyType;
+import org.dosnavigator.terminal.TerminalSurface;
 import org.dosnavigator.terminal.TerminalSize;
 import org.dosnavigator.tui.Application;
 import org.dosnavigator.tui.Desktop;
@@ -25,8 +26,11 @@ public final class DosNavigatorApp extends Application {
     private final StatusLineView statusLine;
 
     public DosNavigatorApp(Path leftDirectory, Path rightDirectory) throws IOException {
-        super("Dos Navigator Java");
+        this(openInteractiveTerminal(), leftDirectory, rightDirectory);
+    }
 
+    public DosNavigatorApp(TerminalSurface terminal, Path leftDirectory, Path rightDirectory) throws IOException {
+        super(terminal);
         LocalFileSystemService fileSystem = new LocalFileSystemService();
         leftPanel = new FilePanelWindow(new Box(0, 1, 1, 1), new FilePanel(fileSystem, leftDirectory));
         rightPanel = new FilePanelWindow(new Box(1, 1, 1, 1), new FilePanel(fileSystem, rightDirectory));
@@ -53,6 +57,10 @@ public final class DosNavigatorApp extends Application {
             commandBus().dispatch(menuBar.active() ? CommandId.MENU_ON : CommandId.MENU_OFF);
             return true;
         });
+    }
+
+    private static TerminalSurface openInteractiveTerminal() throws IOException {
+        return new org.dosnavigator.terminal.TerminalDriver("Dos Navigator Java");
     }
 
     @Override

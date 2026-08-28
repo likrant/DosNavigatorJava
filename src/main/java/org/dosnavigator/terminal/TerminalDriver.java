@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 
-public final class TerminalDriver implements Closeable {
+public final class TerminalDriver implements TerminalSurface {
     private final Terminal terminal;
     private final PrintWriter writer;
     private Attributes originalAttributes;

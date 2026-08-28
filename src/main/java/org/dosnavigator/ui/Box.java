@@ -1,7 +1,7 @@
 package org.dosnavigator.ui;
 
 import org.dosnavigator.terminal.Color;
-import org.dosnavigator.terminal.TerminalDriver;
+import org.dosnavigator.terminal.TerminalSurface;
 
 public record Box(int x, int y, int width, int height) {
     private static final char TOP_LEFT = '\u2554';
@@ -11,7 +11,7 @@ public record Box(int x, int y, int width, int height) {
     private static final char HORIZONTAL = '\u2550';
     private static final char VERTICAL = '\u2551';
 
-    public void draw(TerminalDriver terminal, Color foreground, Color background) {
+    public void draw(TerminalSurface terminal, Color foreground, Color background) {
         if (width <= 1 || height <= 1) {
             return;
         }
