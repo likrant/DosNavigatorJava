@@ -30,10 +30,23 @@ public final class DosNavigatorApp extends Application {
     }
 
     public DosNavigatorApp(TerminalSurface terminal, Path leftDirectory, Path rightDirectory) throws IOException {
+        this(terminal, leftDirectory, rightDirectory,
+                leftDirectory.toAbsolutePath().normalize().toString(),
+                rightDirectory.toAbsolutePath().normalize().toString());
+    }
+
+    /** Source-faithful display labels are separate from portable host paths. */
+    public DosNavigatorApp(
+            TerminalSurface terminal,
+            Path leftDirectory,
+            Path rightDirectory,
+            String leftDisplayDirectory,
+            String rightDisplayDirectory
+    ) throws IOException {
         super(terminal);
         LocalFileSystemService fileSystem = new LocalFileSystemService();
-        leftPanel = new FilePanelWindow(new Box(0, 1, 1, 1), new FilePanel(fileSystem, leftDirectory));
-        rightPanel = new FilePanelWindow(new Box(1, 1, 1, 1), new FilePanel(fileSystem, rightDirectory));
+        leftPanel = new FilePanelWindow(new Box(0, 1, 1, 1), new FilePanel(fileSystem, leftDirectory, leftDisplayDirectory));
+        rightPanel = new FilePanelWindow(new Box(1, 1, 1, 1), new FilePanel(fileSystem, rightDirectory, rightDisplayDirectory));
         menuBar = new MenuBarView(new Box(0, 0, 1, 1));
         menuBar.setVisible(false);
         desktop = new Desktop(new Box(0, 1, 1, 1));
@@ -72,6 +85,14 @@ public final class DosNavigatorApp extends Application {
         leftPanel.setBounds(layout.leftPanel());
         rightPanel.setBounds(layout.rightPanel());
         statusLine.setBounds(layout.statusLine());
+    }
+
+    @Override
+    protected String activeViewName() {
+        if (menuBar.active()) {
+            return "menu:main";
+        }
+        return desktop.current() == rightPanel ? "panel:right" : "panel:left";
     }
 
     @Override

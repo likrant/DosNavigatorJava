@@ -53,6 +53,7 @@ public final class FilePanel {
     );
 
     private final FileSystemService fileSystem;
+    private final String displayDirectory;
     private final NumberFormat numberFormat = NumberFormat.getIntegerInstance(Locale.US);
     private final Set<Path> selectedPaths = new LinkedHashSet<>();
     private DirectoryModel model;
@@ -75,8 +76,17 @@ public final class FilePanel {
     private String message = "";
 
     public FilePanel(FileSystemService fileSystem, Path directory) {
+        this(fileSystem, directory, directory.toAbsolutePath().normalize().toString());
+    }
+
+    /**
+     * The host path stays in {@code directory}; the visible DOS path is a
+     * resource/configuration concern and must not expose a temporary test root.
+     */
+    public FilePanel(FileSystemService fileSystem, Path directory, String displayDirectory) {
         this.fileSystem = fileSystem;
         this.directory = directory.toAbsolutePath().normalize();
+        this.displayDirectory = displayDirectory;
         reload();
     }
 
@@ -84,7 +94,7 @@ public final class FilePanel {
         Color borderColor = active ? colors.activeBorder().foreground() : colors.inactiveBorder().foreground();
         box.draw(terminal, borderColor, colors.panel().background());
 
-        String title = " " + directory + " ";
+        String title = " " + displayDirectory + " ";
         terminal.putString(
                 box.x() + 2,
                 box.y(),
@@ -146,10 +156,10 @@ public final class FilePanel {
             return message;
         }
         if (records.isEmpty()) {
-            return directory + " | empty";
+            return displayDirectory + " | empty";
         }
         FileRecord record = records.get(selectedIndex);
-        return directory + " | " + record.name() + " | " + describeSize(record)
+        return displayDirectory + " | " + record.name() + " | " + describeSize(record)
                 + " | " + selectedCount() + " selected, " + numberFormat.format(selectedSize()) + " bytes";
     }
 

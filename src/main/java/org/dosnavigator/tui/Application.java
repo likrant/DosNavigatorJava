@@ -66,6 +66,7 @@ public abstract class Application implements Closeable {
     public final void renderFrame() {
         terminal.beginFrame();
         root.render(new RenderContext(terminal, palette));
+        terminal.setActiveView(activeViewName());
         terminal.refresh();
     }
 
@@ -102,6 +103,11 @@ public abstract class Application implements Closeable {
     }
 
     protected abstract void onResize(TerminalSize size);
+
+    /** Frame metadata hook for headless parity assertions. */
+    protected String activeViewName() {
+        return "";
+    }
 
     protected void handleKey(KeyStroke key) {
         if (key == null) {

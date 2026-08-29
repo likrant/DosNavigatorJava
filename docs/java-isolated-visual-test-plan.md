@@ -69,6 +69,12 @@ focus/selection/disabled states и status line. Динамические пол�
 
 ## Запуск и CI
 
+`LegacyVisualParityTest` is a mandatory Maven test. It renders the Java startup
+Frame at 160x50 cells of 8x14 pixels, crops the checked-in legacy PNG to the
+`logicalClient` rectangle, and requires an exact pixel match. Every run writes
+`java.png`, `legacy-client.png`, and `diff.png` under
+`target/visual-parity/00-startup`; no mismatch tolerance is permitted.
+
 Локальный Windows запуск существующего harness:
 
 ```powershell

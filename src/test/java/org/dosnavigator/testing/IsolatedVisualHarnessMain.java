@@ -26,7 +26,8 @@ import java.util.List;
 import java.util.Locale;
 
 public final class IsolatedVisualHarnessMain {
-    private static final TerminalSize SCREEN = new TerminalSize(80, 25);
+    /** Matches the client grid declared by the checked-in legacy captures. */
+    private static final TerminalSize SCREEN = new TerminalSize(160, 50);
     private static final Instant FIXED_TIME = Instant.parse("2026-08-28T09:30:00Z");
     private static final DateTimeFormatter RUN_ID_FORMAT = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss").withZone(java.time.ZoneOffset.UTC);
 
@@ -147,8 +148,8 @@ public final class IsolatedVisualHarnessMain {
     }
 
     private static void renderSnapshot(TerminalSnapshot snapshot, Path output) throws IOException {
-        int cellWidth = 10;
-        int cellHeight = 18;
+        int cellWidth = 8;
+        int cellHeight = 14;
         BufferedImage image = new BufferedImage(snapshot.width() * cellWidth, snapshot.height() * cellHeight, BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics = image.createGraphics();
         try {
@@ -175,8 +176,9 @@ public final class IsolatedVisualHarnessMain {
     private static java.awt.Color toAwt(Color color) {
         return switch (color) {
             case BLACK -> new java.awt.Color(0x00, 0x00, 0x00);
-            case BLUE, DARK_BLUE -> new java.awt.Color(0x00, 0x00, 0xAA);
-            case CYAN -> new java.awt.Color(0x00, 0xAA, 0xAA);
+            case BLUE -> new java.awt.Color(0x00, 0x00, 0xAA);
+            case DARK_BLUE -> new java.awt.Color(0x00, 0x00, 0x80);
+            case CYAN -> new java.awt.Color(0x00, 0xFF, 0xFF);
             case CYAN_BRIGHT -> new java.awt.Color(0x55, 0xFF, 0xFF);
             case GREEN -> new java.awt.Color(0x00, 0xAA, 0x00);
             case WHITE -> new java.awt.Color(0xAA, 0xAA, 0xAA);
